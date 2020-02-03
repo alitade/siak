@@ -1,0 +1,22 @@
+<?php
+
+use yii\helpers\Html;
+
+/**
+ * @var yii\web\View $this
+ * @var app\models\DosenWali $model
+ */
+
+$this->title = 'Create Dosen Wali';
+$this->params['breadcrumbs'][] = ['label' => 'Dosen Walis', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="dosen-wali-create">
+    <div class="page-header">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
+    <?= $this->render('_form', [
+        'model' => $model,
+    ]) ?>
+
+</div>

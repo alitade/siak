@@ -1,0 +1,291 @@
+/* BOOTSTRAP 3.x GLOBAL STYLES
+-------------------------------------------------- */
+body {
+  padding-bottom: 40px;
+
+}
+
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 20;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.navbar-inverse {
+  background:transparent;
+  border:none;
+  }
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  background-color:#005F6B;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+}
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+  font-family: 'Unica One', cursive;
+  text-transform: uppercase;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.navbar-inverse .navbar-brand {
+color: #00DFFC;
+  font-size:300%;
+}
+
+.navbar-brand span {
+  color:white;
+  }
+  
+  .cta-strip {
+  /** To edit this background, follow this link:
+http://svgeneration.com/generate/GPlay?height=11.2&width=9.1&background=00b4cc&overlay=00dffc&weight=15&padding=0&
+*/
+background-color: #00b4cc;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNTQ2JyBoZWlnaHQ9JzMzNS45OTk5OTk5OTk5OTk5NCcgdmlld0JveD0nMCAwIDEwOS4xOTk5OTk5OTk5OTk5OSA2Ny4xOTk5OTk5OTk5OTk5OSc+Cgk8ZGVmcz4KCQk8cGF0aCBpZD0ncycgZmlsbD0nIzAwZGZmYycgZD0nTTAsMGw5LjEgNS42bC05LjEsNS42eicvPgoJPC9kZWZzPgoJPGcgaWQ9J2InPgoJPHVzZSB4PSctOS4xJyB5PSctNS42JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzAnIHk9JzAnIGZpbGwtb3BhY2l0eT0nMC40NDk5OTk5OTk5OTk5OTk5NicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy05LjEnIHk9JzUuNicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMCcgeT0nMTEuMicgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTkuMScgeT0nMTYuNzk5OTk5OTk5OTk5OTk3JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzAnIHk9JzIyLjQnIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTkuMScgeT0nMjgnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nOS4xJyB5PSctNS42JyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMTguMicgeT0nMCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSc5LjEnIHk9JzUuNicgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTE4LjInIHk9JzExLjInIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nOS4xJyB5PScxNi43OTk5OTk5OTk5OTk5OTcnIGZpbGwtb3BhY2l0eT0nMC4xNScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xOC4yJyB5PScyMi40JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzkuMScgeT0nMjgnIGZpbGwtb3BhY2l0eT0nMC40NDk5OTk5OTk5OTk5OTk5NicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0yNy4yOTk5OTk5OTk5OTk5OTcnIHk9Jy01LjYnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMTguMicgeT0nMCcgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMjcuMjk5OTk5OTk5OTk5OTk3JyB5PSc1LjYnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC40NDk5OTk5OTk5OTk5OTk5NicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzE4LjInIHk9JzExLjInIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTI3LjI5OTk5OTk5OTk5OTk5NycgeT0nMTYuNzk5OTk5OTk5OTk5OTk3JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMTUnIHhsaW5rOmhyZWY9JyNzJyAvPgkKCTx1c2UgeD0nMTguMicgeT0nMjIuNCcgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMjcuMjk5OTk5OTk5OTk5OTk3JyB5PScyOCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScyNy4yOTk5OTk5OTk5OTk5OTcnIHk9Jy01LjYnIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTM2LjQnIHk9JzAnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMjcuMjk5OTk5OTk5OTk5OTk3JyB5PSc1LjYnIGZpbGwtb3BhY2l0eT0nMC4xNScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0zNi40JyB5PScxMS4yJyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScyNy4yOTk5OTk5OTk5OTk5OTcnIHk9JzE2Ljc5OTk5OTk5OTk5OTk5NycgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTM2LjQnIHk9JzIyLjQnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4xNScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzI3LjI5OTk5OTk5OTk5OTk5NycgeT0nMjgnIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTQ1LjUnIHk9Jy01LjYnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC40NDk5OTk5OTk5OTk5OTk5NicgeGxpbms6aHJlZj0nI3MnIC8+CQoJPHVzZSB4PSczNi40JyB5PScwJyBmaWxsLW9wYWNpdHk9JzAuNicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy00NS41JyB5PSc1LjYnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4xNScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzM2LjQnIHk9JzExLjInIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTQ1LjUnIHk9JzE2Ljc5OTk5OTk5OTk5OTk5NycgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMzYuNCcgeT0nMjIuNCcgZmlsbC1vcGFjaXR5PScwLjE1JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTQ1LjUnIHk9JzI4JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSc0NS41JyB5PSctNS42JyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy01NC41OTk5OTk5OTk5OTk5OTQnIHk9JzAnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4JCgk8dXNlIHg9JzQ1LjUnIHk9JzUuNicgZmlsbC1vcGFjaXR5PScwLjYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctNTQuNTk5OTk5OTk5OTk5OTk0JyB5PScxMS4yJyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+CQoJPHVzZSB4PSc0NS41JyB5PScxNi43OTk5OTk5OTk5OTk5OTcnIGZpbGwtb3BhY2l0eT0nMC40NDk5OTk5OTk5OTk5OTk5NicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy01NC41OTk5OTk5OTk5OTk5OTQnIHk9JzIyLjQnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nNDUuNScgeT0nMjgnIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTwvZz4KCTx1c2UgeD0nLTU0LjU5OTk5OTk5OTk5OTk5NCcgeT0nMzMuNTk5OTk5OTk5OTk5OTk0JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nLTEwOS4xOTk5OTk5OTk5OTk5OScgeT0nLTIyLjQnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAtMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nNTQuNTk5OTk5OTk5OTk5OTk0JyB5PSctNDQuOCcgdHJhbnNmb3JtPSdtYXRyaXgoMSAwIDAgLTEgMCAwKScgeGxpbms6aHJlZj0nI2InIC8+Cgk8dXNlIHg9JzU0LjU5OTk5OTk5OTk5OTk5NCcgeT0nLTc4LjM5OTk5OTk5OTk5OTk5JyB0cmFuc2Zvcm09J21hdHJpeCgxIDAgMCAtMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KPC9zdmc+Cg==');
+
+      color:white;
+  padding-top:1%;
+  padding-bottom:1%;
+    }
+    
+    .carousel {
+margin-bottom: 0px;
+}
+
+img.grayscale {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+  opacity:.2;
+}
+
+.carousel-caption img {
+  position: relative;
+    height:auto;
+    min-height:0px;
+    width:200px;
+    margin: 0 auto;
+  }
+
+.smallicon {
+  width: 24px;
+  }
+  
+  .transaction-wrapper {
+    margin-top:1%;
+    }
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remve the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  }
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.marquee span {
+float:left;  
+  text-transform: uppercase;
+  }
+
+.btn-primary {
+  background-color: #008C9E;
+  border-color: #008C9E;
+  text-transform: uppercase;
+  font-family: 'Unica One', cursive;
+  font-size:1.3em;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #007585;
+  border-color: #005f6b;
+}
+.btn-primary.disabled:hover,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled]:hover,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-custom:hover,
+fieldset[disabled] .btn-custom:focus,
+fieldset[disabled] .btn-custom:active,
+fieldset[disabled] .btn-custom.active {
+  background-color: #008C9E;
+  border-color: #008C9E;
+}
+
+          
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+color: #fff;
+background-color: #008C9E;
+}
+
+.super-large {
+    font-size: 3em;
+  }
+
+.gradient {
+    /** To edit this background, follow this link:
+http://svgeneration.com/generate/Tinted-Sunglasses?center-x=250¢er-y=240&opacity=1&radius=874&color-1=00dffc&offset-1=0&color-2=008c9e&offset-2=51.2&color-3=005f6b&offset-3=100&
+*/
+background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPHJhZGlhbEdyYWRpZW50IGlkPSdnbG93JyBncmFkaWVudFVuaXRzPSd1c2VyU3BhY2VPblVzZScgY3g9JzI1MCcgY3k9JzI0MCcgcj0nODc0Jz4KCQk8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMDBkZmZjJyAvPgoJCTxzdG9wIG9mZnNldD0nNTEuMiUnIHN0b3AtY29sb3I9JyMwMDhjOWUnIC8+CgkJPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMDA1ZjZiJyAvPgoJPC9yYWRpYWxHcmFkaWVudD4KCTxyZWN0IGZpbGw9J3VybCgjZ2xvdyknIHg9Jy0xJScgeT0nLTElJyBmaWxsLW9wYWNpdHk9JzEnIHdpZHRoPScxMDIlJyBoZWlnaHQ9JzEwMiUnLz4KPC9zdmc+');
+  padding:5%;
+  }
+
+  .gradient2 {
+      /** To edit this background, follow this link:
+http://svgeneration.com/generate/Tinted-Sunglasses?center-x=525¢er-y=252&opacity=0.76&radius=1000&color-1=00b4cc&offset-1=0&color-2=005f6b&offset-2=60&color-3=343838&offset-3=100&
+*/
+background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPHJhZGlhbEdyYWRpZW50IGlkPSdnbG93JyBncmFkaWVudFVuaXRzPSd1c2VyU3BhY2VPblVzZScgY3g9JzUyNScgY3k9JzI1Micgcj0nMTAwMCc+CgkJPHN0b3Agb2Zmc2V0PScwJScgc3RvcC1jb2xvcj0nIzAwYjRjYycgLz4KCQk8c3RvcCBvZmZzZXQ9JzYwJScgc3RvcC1jb2xvcj0nIzAwNWY2YicgLz4KCQk8c3RvcCBvZmZzZXQ9JzEwMCUnIHN0b3AtY29sb3I9JyMzNDM4MzgnIC8+Cgk8L3JhZGlhbEdyYWRpZW50PgoJPHJlY3QgZmlsbD0ndXJsKCNnbG93KScgeD0nLTElJyB5PSctMSUnIGZpbGwtb3BhY2l0eT0nMC43Nicgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScvPgo8L3N2Zz4=');
+    
+    padding: 3%}
+
+.gradient3 {
+    /** To edit this background, follow this link:
+http://svgeneration.com/generate/Tinted-Sunglasses?center-x=743¢er-y=883&opacity=0.71&radius=874&color-1=00dffc&offset-1=0&color-2=008c9e&offset-2=51.2&color-3=262626&offset-3=100&
+*/
+background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPHJhZGlhbEdyYWRpZW50IGlkPSdnbG93JyBncmFkaWVudFVuaXRzPSd1c2VyU3BhY2VPblVzZScgY3g9Jzc0MycgY3k9Jzg4Mycgcj0nODc0Jz4KCQk8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMDBkZmZjJyAvPgoJCTxzdG9wIG9mZnNldD0nNTEuMiUnIHN0b3AtY29sb3I9JyMwMDhjOWUnIC8+CgkJPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMjYyNjI2JyAvPgoJPC9yYWRpYWxHcmFkaWVudD4KCTxyZWN0IGZpbGw9J3VybCgjZ2xvdyknIHg9Jy0xJScgeT0nLTElJyBmaWxsLW9wYWNpdHk9JzAuNzEnIHdpZHRoPScxMDIlJyBoZWlnaHQ9JzEwMiUnLz4KPC9zdmc+');
+    padding: 3%}
+  
+  .even-height {
+      min-height:385px;
+    }
+
+select.form-control {
+color: white;
+border: none;
+border-radius: 0px;
+font-size: 3em;
+height: 80px;
+background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9z…sbC1vcGFjaXR5PScwLjcxJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJy8+Cjwvc3ZnPg==') !important;
+padding: 3%;
+background: #008C9E;
+}
+
+.currency-list {
+  color: white;
+    font-size:3em;
+    padding:3%;
+  }
+  
+  .currency-list:hover, .currency-list:active, .currency-list:focus {
+        color:white;
+        background:#008C9E !important;
+}
+
+.normal-text {
+    font-size: .33em;
+  }
