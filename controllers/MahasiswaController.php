@@ -331,16 +331,19 @@ class MahasiswaController extends Controller{
             $Kalender	= Kalender::findOne($kr);
 			$stat	= KPembayarankrs::find()->where("nim='$nim' and tahun='".$Kalender->kr_kode."' and (sisa <=0 OR status='Lunas')")->One();
 			$sql = "
-                select tbl_krs.*,tbl_matkul.* from tbl_krs 
-                    join tbl_jadwal j on(tbl_krs.jdwl_id=j.jdwl_id and (j.RStat is null or j.RStat='0'))
-                    join tbl_bobot_nilai bn on(j.bn_id=bn.id and (bn.RStat is null or bn.RStat='0'))
-                    join tbl_Kalender k on(bn.kln_id=k.kln_id and (k.RStat is null or k.RStat='0'))
-                    join tbl_matkul on (tbl_matkul.mtk_kode=bn.mtk_kode and (tbl_matkul.RStat is null or tbl_matkul.RStat='0'))
+                select tbl_krs.*
+                ,tbl_matkul.mtk_kode
+                ,tbl_matkul.mtk_nama
+                ,tbl_matkul.mtk_semester
+                from tbl_krs 
+                    join tbl_jadwal j on( tbl_krs.jdwl_id=j.jdwl_id and isnull(j.RStat,0)=0 )
+                    join tbl_bobot_nilai bn on(j.bn_id=bn.id and isnull(bn.RStat,0)=0 )
+                    join tbl_Kalender k on(bn.kln_id=k.kln_id and isnull(k.RStat,0)=0 )
+                    join tbl_matkul on (tbl_matkul.mtk_kode=bn.mtk_kode and isnull(tbl_matkul.RStat,0)=0 )
                 where
                     tbl_krs.mhs_nim='".$nim."' and k.kr_kode =(select distinct kr_kode from tbl_kalender where kln_id='".$kr."') and krs_stat='1'
-					and (tbl_krs.RStat is null or tbl_krs.RStat='0')
-					
-                ORDER BY tbl_matkul.mtk_semester ASC
+					and isnull(tbl_krs.RStat,0)=0
+
             ";
 			
 			if($stat){
@@ -352,12 +355,19 @@ class MahasiswaController extends Controller{
 				}
 			}
 
-            $model = new SqlDataProvider(['sql'=>$sql,]);
+            $model = new SqlDataProvider([
+                'sql'=>$sql,
+                'sort'=>[
+                    'attributes'=>[
+                        'mtk_semester'=>['default' => SORT_DESC,]
+                    ]
+                ],
+                ]);
 
         
         }else{
             $sql = "
-                select tbl_krs.*,tbl_matkul.* from tbl_krs 
+                select tbl_krs.*,tbl_matkul.mtk_kode  from tbl_krs 
                     join tbl_jadwal j on(tbl_krs.jdwl_id=j.jdwl_id)
                     join tbl_bobot_nilai bn on(j.bn_id=bn.id)
                     join tbl_Kalender k on(bn.kln_id=k.kln_id)
