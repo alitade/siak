@@ -1088,15 +1088,15 @@ class KrsController extends Controller{
         //$kuota = Yii::$app->db->createCommand($kuota)->queryOne();
         //$kuota = $kuota['nil'] && $kuota['aktif']=='1'?$kuota['nil']:0;
 
-        $listJadwal ="exec MenuJadwalKrs '$mMhs->mhs_nim','$mKr->kr_kode'";
-
-        $dataProvider = new SqlDataProvider([
-            'sql'=>$listJadwal,
+        $listJadwal =  Yii::$app->db->createCommand("exec MenuJadwalKrs '$mMhs->mhs_nim','$mKr->kr_kode'")->queryAll();
+        //Funct::v($listJadwal);
+        $dataProvider = new ArrayDataProvider([
+            'allModels'=>$listJadwal,
             'pagination' => [
                 'pageSize' => 0,
             ],
         ]);
-        $listJadwal=Yii::$app->db->createCommand($listJadwal)->queryAll();
+        //$listJadwal=Yii::$app->db->createCommand($listJadwal)->queryAll();
 
 
         $listKrs="
