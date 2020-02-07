@@ -252,7 +252,7 @@ class KrsController extends Controller{
         if($tgl >= $tgl1 and $tgl<=$tgl2){
             $open=true;
         }else{
-            $pkrs = Pkrs::findOne(['kr_kode'=>$mKr->kr_kode,'mhs_nim'=>"$user"]);
+            $pkrs = Pkrs::find()->where(['kr_kode'=>$mKr->kr_kode,'mhs_nim'=>"$user"])->one();
             if($pkrs->mhs_nim!==null){
                 $tgl=date('Y-m-d');
                 $tgl1=date('Y-m-d',strtotime($pkrs->tgl_awal));
@@ -463,15 +463,15 @@ class KrsController extends Controller{
         //$kuota = Yii::$app->db->createCommand($kuota)->queryOne();
         //$kuota = $kuota['nil'] && $kuota['aktif']=='1'?$kuota['nil']:0;
 
-        $listJadwal ="exec MenuJadwalKrs '$mMhs->mhs_nim','$mKr->kr_kode'";
-
-        $dataProvider = new SqlDataProvider([
-            'sql'=>$listJadwal,
+        $listJadwal =  Yii::$app->db->createCommand("exec MenuJadwalKrs '$mMhs->mhs_nim','$mKr->kr_kode'")->queryAll();
+        //Funct::v($listJadwal);
+        $dataProvider = new ArrayDataProvider([
+            'allModels'=>$listJadwal,
             'pagination' => [
                 'pageSize' => 0,
             ],
         ]);
-        $listJadwal=Yii::$app->db->createCommand($listJadwal)->queryAll();
+        //$listJadwal=Yii::$app->db->createCommand($listJadwal)->queryAll();
 
 
         $listKrs="
@@ -537,7 +537,7 @@ class KrsController extends Controller{
                 #if($qKouta['aktif']==1){$kuota=$qKouta['nil'];}
 
                 $user=Yii::$app->user->identity;
-                $modJd=Jadwal::findOne(['jdwl_id'=>$jd[0],"isnull(RStat,0)"=>0 ]);
+                $modJd=Jadwal::find()->where(['jdwl_id'=>$jd[0],"isnull(RStat,0)"=>0 ])->one();
                 if(!$modJd){throw new NotFoundHttpException('The requested page does not exist.');}
                 $mhs=Mahasiswa::findOne($user->username);
                 if(!$mhs){throw new NotFoundHttpException('The requested page does not exist.');}
@@ -685,7 +685,7 @@ class KrsController extends Controller{
                                 if($save){
                                     #die();
                                     Yii::$app->db->createCommand($update)->execute();
-                                    $modKrs=TKrsDet::findOne(['kode'=>$kode,"isnull(RStat,0)"=>0]);
+                                    $modKrs=TKrsDet::find()->where(['kode'=>$kode,"isnull(RStat,0)"=>0])->one();
                                     Functdb::insLog($modKrs::$ID,$modKrs->id,'C',"Menambah Data KRS $act",'-');
                                     $JD['JD']=$vJdwl;
                                     $JD['MK'][$data->bn->mtk_kode]=1;$JD['ID'][$data->jdwl_id]=1;
@@ -1838,7 +1838,7 @@ class KrsController extends Controller{
             if($d->tf!=1){
                 foreach ($d->krsdet as $d1){
                     if(($d1->RStat?:0)==0 && $d1->krs_stat==1){
-                        $krs = Krs::findOne(['jdwl_id'=>$d1->jdwl_id,'mhs_nim'=>$d1->mhs_nim]);
+                        $krs = Krs::find()->where(['jdwl_id'=>$d1->jdwl_id,'mhs_nim'=>$d1->mhs_nim])->one();
                         if($krs===null){
                             $krs = new Krs;
                             $krs->krs_tgl=$d1->ctgl;
@@ -1882,7 +1882,7 @@ class KrsController extends Controller{
             if($d->tf==1){
                 foreach ($d->krsdet as $d1){
                     if(($d1->RStat?:0)==0 && $d1->krs_stat==1){
-                        $krs = Krs::findOne(['jdwl_id'=>$d1->jdwl_id,'mhs_nim'=>$d1->mhs_nim]);
+                        $krs = Krs::find()->where(['jdwl_id'=>$d1->jdwl_id,'mhs_nim'=>$d1->mhs_nim])->one();
                         if($krs===null){
                             $row[]=[
                                 $d1->ctgl,
