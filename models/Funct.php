@@ -1131,8 +1131,10 @@ class Funct {
 	public static function AKSES(){
 		$sql = "select * from auth_item where name not like '/%'";
 		$sql = Yii::$app->db->createCommand($sql)->queryAll();
-		$data="";
-		foreach($sql as $d){$data[$d['name']]=$d['name'];}
+		$data=[];
+		foreach($sql as $d){
+		        $data[$d['name']]=$d['name'];
+		}
 		return $data;
 	}
 
