@@ -20,6 +20,7 @@ use app\models\TKrsDet;
 use app\models\TKrsHead;
 use app\models\Krs;
 use app\models\KrsSearch;
+use yii\data\ArrayDataProvider;
 use yii\data\SqlDataProvider;
 use yii\db\Expression;
 use yii\helpers\Url;
@@ -1186,15 +1187,15 @@ class KrsController extends Controller{
         //$kuota = Yii::$app->db->createCommand($kuota)->queryOne();
         //$kuota = $kuota['nil'] && $kuota['aktif']=='1'?$kuota['nil']:0;
 
-        $listJadwal ="exec MenuJadwalKrs '$mMhs->mhs_nim','$mKr->kr_kode'";
-
-        $dataProvider = new SqlDataProvider([
-            'sql'=>$listJadwal,
+        $listJadwal =  Yii::$app->db->createCommand("exec MenuJadwalKrs '$mMhs->mhs_nim','$mKr->kr_kode'")->queryAll();
+        //Funct::v($listJadwal);
+        $dataProvider = new ArrayDataProvider([
+            'allModels'=>$listJadwal,
             'pagination' => [
                 'pageSize' => 0,
             ],
         ]);
-        $listJadwal=Yii::$app->db->createCommand($listJadwal)->queryAll();
+        //$listJadwal=Yii::$app->db->createCommand($listJadwal)->queryAll();
 
 
         $listKrs="
@@ -1250,7 +1251,7 @@ class KrsController extends Controller{
                 $qKouta=Yii::$app->db->createCommand($qKouta)->queryOne();
 
                 $user=Yii::$app->user->identity;
-                $modJd=Jadwal::findOne(['jdwl_id'=>$jd[0],"isnull(RStat,0)"=>0 ]);
+                $modJd=Jadwal::find()->where(['jdwl_id'=>$jd[0], "isnull(RStat,0)"=>0 ])->one();
                 if(!$modJd){throw new NotFoundHttpException('The requested page does not exist.');}
                 $mhs=Mahasiswa::findOne($id);
                 if(!$mhs){throw new NotFoundHttpException('The requested page does not exist.');}
@@ -1403,7 +1404,7 @@ class KrsController extends Controller{
                                 if($save){
                                     #die();
                                     Yii::$app->db->createCommand($update)->execute();
-                                    $modKrs=TKrsDet::findOne(['kode'=>$kode,"isnull(RStat,0)"=>0]);
+                                    $modKrs=TKrsDet::find()->where(['kode'=>$kode,"isnull(RStat,0)"=>0])->one();
                                     Functdb::insLog($modKrs::$ID,$modKrs->id,'C',"Menambah Data KRS $act",'-');
                                     $JD['JD']=$vJdwl;
                                     $JD['MK'][$data->bn->mtk_kode]=1;$JD['ID'][$data->jdwl_id]=1;
