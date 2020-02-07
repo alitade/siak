@@ -8,9 +8,10 @@ use kartik\grid\GridView;
 $agama=[1=>'Islam','Protestan','Katolik','Hindu','Budha'];
 
 
-$TRANSKRIP = new \yii\data\SqlDataProvider([
-    'sql'=>" Exec dbo.detailnilai '$model->mhs_nim'",
-    'db'=>'db2',
+
+$TRANSKRIP = new \yii\data\ArrayDataProvider([
+    'allModels'=>Yii::$app->db2->createCommand("Exec dbo.detailnilai '$model->mhs_nim'")->queryAll(),
+    //'db'=>'db2',
     'pagination' => ['pageSize' => 0,],
 ]);
 
