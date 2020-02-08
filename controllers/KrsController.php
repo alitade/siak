@@ -864,7 +864,6 @@ class KrsController extends Controller{
 
         $dataProvider = new ArrayDataProvider([
             'allModels'=>Yii::$app->db2->createCommand("Exec dbo.detailnilai '$model->nim'")->queryAll(),
-            'db'=>'db2',
             'pagination' => ['pageSize' => 0,],
         ]);
 
