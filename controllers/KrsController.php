@@ -862,8 +862,8 @@ class KrsController extends Controller{
         #$detNil = Yii::$app->db2->createCommand("Exec dbo.detailnilai '$model->nim'")->queryAll();
         #$listNilai="exec MenuJadwalKrs '$mMhs->mhs_nim','$mKr->kr_kode'";
 
-        $dataProvider = new SqlDataProvider([
-            'sql'=>" Exec dbo.detailnilai '$model->nim'",
+        $dataProvider = new ArrayDataProvider([
+            'allModels'=>Yii::$app->db2->createCommand("Exec dbo.detailnilai '$model->nim'")->queryAll(),
             'db'=>'db2',
             'pagination' => ['pageSize' => 0,],
         ]);
