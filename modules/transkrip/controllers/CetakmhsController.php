@@ -265,8 +265,8 @@ class CetakmhsController extends ModController{
         ])
             ->orderBy(['thn_jabatan'=>SORT_DESC])
             ->one();
-        $NoTrans='';
-        $Ta='';
+        $NoTrans=[];
+        $Ta=[];
         foreach($Head->all() as $d){
             $NoTrans[]=$d->kode_;
             $Ta[]=$d->skripsi_indo;
@@ -405,9 +405,9 @@ class CetakmhsController extends ModController{
         ])
             ->orderBy(['thn_jabatan'=>SORT_DESC])
             ->one();
-        $NoTrans='';
-        $Ta='';
-        $Ta1='';
+        $NoTrans=[];
+        $Ta=[];
+        $Ta1=[];
         foreach($Head->all() as $d){
             $NoTrans[]=$d->kode_;
             $Ta[]=$d->skripsi_indo;

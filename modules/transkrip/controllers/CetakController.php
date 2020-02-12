@@ -206,14 +206,14 @@ class CetakController extends ModController{
 			<table width="100%" style="font-size:10px">
 				<tr>
 					<td rowspan="3" ><center><img src="'.Url::to("@web/ypkp.png").'" width="10%"></center></td>
-					<td valign="bottom"><h4><b>UNIVERSITAS SANGGA BUANA YPKP</b></h4></td>
+					<td valign="bottom"><h4><b>UNIVERSITAS --------------------------------------</b></h4></td>
 				</tr>
 				<tr>
-					<td>Jalan PHH Mustopa No. 68 - Bandung 40124</td>
+					<td>Jalan ______________________ - Bandung _____ </td>
 				</tr>
 				<tr>
-					<td>Telp. 022-7202233 / Fax. 022-7201756</td>
-					<td>Website : http://www.usbypkp.ac.id &nbsp; Email : admin@usbypkp.ac.id</td>
+					<td>Telp. ___-_______ / Fax. ___-_______</td>
+					<td>Website : http://www.__________.ac.id &nbsp; Email : admin@__________.ac.id</td>
 				</tr>
 			</table>
 		';
@@ -279,8 +279,8 @@ class CetakController extends ModController{
 		])
 		->orderBy(['thn_jabatan'=>SORT_DESC])
 		->one();		
-		$NoTrans='';
-		$Ta='';
+		$NoTrans=[];
+		$Ta=[];
 		foreach($Head->all() as $d){
 			$NoTrans[]=$d->kode_;
 			$Ta[]=$d->skripsi_indo;
@@ -417,9 +417,9 @@ class CetakController extends ModController{
 		])
 		->orderBy(['thn_jabatan'=>SORT_DESC])
 		->one();		
-		$NoTrans='';
-		$Ta='';
-		$Ta1='';
+		$NoTrans=[];
+		$Ta=[];
+		$Ta1=[];
 		foreach($Head->all() as $d){
 			$NoTrans[]=$d->kode_;
 			$Ta[]=$d->skripsi_indo;

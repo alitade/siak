@@ -35,7 +35,7 @@ class ModController extends Controller
 	protected function Akses($kode=0){
 		$kode	= decbin((int)$kode);
 		$model = \app\modules\transkrip\models\Ip::find()->All();
-		$arr="";
+		$arr=[];
 		foreach($model as $data){
 			if( array_key_exists($kode,self::StatAkses($data['Akses'])) ){$arr[]=$data['IP'];}
 		}		
